@@ -17,7 +17,7 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "6797c46d4e6b3d6863d26e47",
+  "nxCloudId": "67980f0c68bfe0e38b334ce8",
   "targetDefaults": {
     "@angular-devkit/build-angular:application": {
       "cache": true,
@@ -36,19 +36,10 @@
     "@nx/jest:jest": {
       "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
-      "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
+      "options": { "passWithNoTests": true },
+      "configurations": { "ci": { "ci": true, "codeCoverage": true } }
     },
-    "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
-    }
+    "e2e-ci--**/*": { "dependsOn": ["^build"] }
   },
   "plugins": [
     {
@@ -60,12 +51,7 @@
         "ciTargetName": "e2e-ci"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } }
   ],
   "generators": {
     "@nx/angular:application": {
